@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: roast-and-chills-lpss
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: AIRTEL_MERCHANT_ID
+        value: "7217231"
+      - key: AIRTEL_MERCHANT_NAME
+        value: "HAKIMU LPSS Roast & Chills"
+      - key: ADMIN_PASSWORD
+        sync: false
